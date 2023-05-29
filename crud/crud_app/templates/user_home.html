@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>User: Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(129deg, rgba(34, 193, 195, 1) 0%, rgba(253, 181, 45, 1) 100%);
+            overflow: hidden;
+            height: 100vh;
+          }
+          .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 80%;
+            max-width: 90%;
+            background: white;
+            border-radius: 10px;
+          }
+
+          .center h1 {
+            text-align: center;
+            padding: 0 0 20px 0;
+            border-bottom: 2px solid #b6b7b8;
+            font-size: 60px;
+          }
+
+          #logout {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            margin-top: 40%;
+        }
+
+        #logout {
+            color: #fff;
+            padding: 10px 16px;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s ease-in-out;
+            width: 100%;
+            max-width: 250px;
+        }
+
+          @media only screen and (max-width: 600px) {
+            .center {
+              width: 60%;
+              height: 60%;
+              padding: 50px;
+            }
+            .center h1 {
+                text-align: center;
+                padding: 1px 0 1px 0;
+                border-bottom: 2px solid silver;
+                font-size: 40px;
+              }
+          }
+    </style>
+</head>
+<body>
+<!--Modal-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold text-center" id="exampleModalCenterTitle">Log Out</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-body-text text-center">Are you sure want to Log out ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <a href="{% url 'logout' %}" type="button" class="btn btn-primary">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="center">
+        <h1 class="py-3">Welcome</h1>
+        <div class="d-grid col-sm-12 col-md-3 mx-auto">
+            <a class="btn btn-primary text-white" id="logout" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Log out
+            </a>
+          </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+</body>
+</html>
